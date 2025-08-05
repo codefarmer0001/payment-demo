@@ -37,9 +37,9 @@ public class OrderController {
     //签名的key，需要平台方提供，与 merchantNo 对应
 //    private final String secret = "177965d903f446bd98b8facbfa361b96";
     //统一的下单接口
-    private static final String orderUrl = "http://callback.oeim.top/v1/order/create";
+    private static final String orderUrl = "http://order.oeim.top/v1/order/create";
     //统一的代付接口
-    private static final String payOutUrl = "http://callback.oeim.top/v1/payOut/create";
+    private static final String payOutUrl = "http://order.oeim.top/v1/payOut/create";
 
     private static final Map<String, String> encryptTypeMap = new HashMap<>();
 
