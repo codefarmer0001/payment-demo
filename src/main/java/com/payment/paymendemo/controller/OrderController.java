@@ -9,6 +9,7 @@ import com.payment.paymendemo.utils.SignUtil;
 import io.micrometer.common.util.StringUtils;
 import jakarta.servlet.http.HttpServletRequest;
 import org.apache.commons.httpclient.NameValuePair;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.util.ObjectUtils;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -37,9 +38,11 @@ public class OrderController {
     //签名的key，需要平台方提供，与 merchantNo 对应
 //    private final String secret = "177965d903f446bd98b8facbfa361b96";
     //统一的下单接口
-    private static final String orderUrl = "http://order.oeim.top/v1/order/create";
+    @Value("${pay.server.out}")
+    private String orderUrl;
     //统一的代付接口
-    private static final String payOutUrl = "http://order.oeim.top/v1/payOut/create";
+    @Value("${pay.server.out}")
+    private String payOutUrl;
 
     private static final Map<String, String> encryptTypeMap = new HashMap<>();
 
